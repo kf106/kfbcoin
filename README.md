@@ -5,7 +5,7 @@ I therefore spent some time thinking about an automated method for admitting new
 
 This repository provides a sample setup for such a semi-open blockchain, using MultiChain (http://www.multichain.com) as the backend blockchain. Currently this is Linux only. The master node runs a webserver that automates the sign-up of client nodes.
 
-A semi-open blockchain is where some permissions are granted to anyone who wants to join, but specific permissions are only granted to select participants. In this example, anyone can connect, send and receive assets. It could be made even more open by allowing any clients that join to subsequently pass these same permissions on to further participants.
+A semi-open blockchain is where some permissions are granted to anyone who wants to join, but specific permissions are only granted to select participants. In this example, anyone can connect, send and receive assets, and activate other accounts to do the same.
 
 However, the master node is the only one able to create streams, issue more assets, and revoke access.
 
