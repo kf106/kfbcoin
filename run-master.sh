@@ -60,6 +60,6 @@ flask run --host=0.0.0.0 --port ${1:-5050}
 
 echo -e ""
 echo -e "--------------------------------------------------------------------------------"
-echo -e "Master node running on localhost:5050                                            "
+echo -e "Master node running on localhost: ${1:-5050}                                    "
 echo -e "--------------------------------------------------------------------------------"
 echo -e ""
