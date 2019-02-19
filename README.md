@@ -1,7 +1,10 @@
 # MultiChain Semi-Open Blockchain
 One of the problems I have had with MultiChain is that when a new node wants to join, they have to try to join, and then send the connection request out of band (e.g. through email) to me. I then have to review it, and decide whether I want them to join.
 
-Making the blockchain "anyone can join, send and receive" requires the workaround listed here:        https://www.multichain.com/qa/3601/anyone-can-issue-dont-seem-to-work?show=3604#a3604 
+Making the blockchain "anyone can join, send and receive" requires the workaround listed here:  
+
+    https://www.multichain.com/qa/3601/anyone-can-issue-dont-seem-to-work?show=3604#a3604 
+
 which involves creating a public dummy address with no assets that anyone can use to send an unspent transaction to new addresses. I find that a bit of a hack.
 
 I therefore spent some time thinking about an automated method for admitting new participants with a limited set of permissions, namely a method for making MultiChain a semi-open (or semi-permissioned) blockchain.
