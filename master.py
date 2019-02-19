@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = 'masterapp450jh906#&'
 @app.route('/')
 def index():
     return render_template(
-        'index.html',
+        'master/index.html',
          nodeaddress = getNodeAddress(multichainCli)
     )
 
@@ -28,25 +28,25 @@ def index():
 @app.route('/admin')
 def admin():
     return render_template(
-        'admin.html',
+        'master/admin.html',
          balances = json.dumps(getBalances(multichainCli), sort_keys = True, indent = 4, separators = (',', ': ')),
          clients = json.dumps(listAddresses(multichainCli), sort_keys = True, indent = 4, separators = (',', ': '))
     )
 
-# Route for automatic client signup
+# Route for automatic master-approved client signup
 @app.route('/signup', methods=['POST'])
 def login():
     if request.method == 'POST':
         # get posted address (should do error checking on this)
         sent_address = request.get_json()['address']
         print("Got signup request with address: " + sent_address)
-        # grant connect send and receive
+        # grant connect send receive and activate
         print(signupAddress(multichainCli, sent_address))
         # asset bank imports all addresses
         print(importAddress(multichainCli, sent_address))          
         # issue more of the assets (gold and xp) to the new address
         print(issueAssetToAddress(multichainCli, sent_address, "samplecoin", "1000"))  
-        return render_template('signup_success.html')       
+        return render_template('master/signup_success.html')       
     else:
-        return render_template('signup_error.html') 
+        return render_template('master/signup_error.html') 
 

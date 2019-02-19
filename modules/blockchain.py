@@ -58,7 +58,7 @@ def getBalances(mc):
 ##
 
 def signupAddress(mc, address):
-    result = subprocess.check_output([mc + " grant " + address + " connect,send,receive"], shell=True)
+    result = subprocess.check_output([mc + " grant " + address + " connect,send,receive,activate"], shell=True)
     return result
 
 def importAddress(mc, address):

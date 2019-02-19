@@ -76,7 +76,7 @@ fi
 echo -e "Starting client interface"
 # start local webserver and browser
 google-chrome --app=http://localhost:5000 &>/dev/null &
-FLASK_APP=client-app.py flask run --host=0.0.0.0 --port 5000
+FLASK_APP=client.py flask run --host=0.0.0.0 --port 5000
 
 echo -e ""
 echo -e "--------------------------------------------------------------------------------"

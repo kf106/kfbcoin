@@ -55,7 +55,7 @@ fi
 
 # this runs the application
 echo -e "Starting master interface"
-export FLASK_APP=master-webserver.py
+export FLASK_APP=master.py
 google-chrome http://localhost:5050 &>/dev/null &
 flask run --host=0.0.0.0 --port ${1:-5050}
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Panel</title>
+    <script type="text/javascript">
+       function loadFunc(){
+         document.getElementById('url').innerText=window.location.href;
+         document.getElementById('url2').innerText=window.location.href;
+         document.getElementById('currentname').value="{{ currentname }}";
+       }
+    </script>
+</head>
+<body onload="loadFunc()">
+
+    <h1>Client Panel</h1>
+    <div class="signup">
+       <p>You are running the client from: <code><span id="url">PLACEHOLDER</span></code></p>
+    </div>
+
+    <h2>Details</h2>
+    <div class="details">
+       <ul>
+         <li><form action="" method=post>Name: {{ form.hidden_tag() }}{{ form.currentname() }}{{ form.submit }}</form></li>
+         <li>Address: {{ address }}</li>
+         <li>Balance: {{ coins }} samplecoins</li>
+
+    </div>
+
+    <h2>Options</h2>
+    <div>
+        <button value="Refresh Page" onClick="window.location.reload()">Refresh</button>
+    </div>
+
+    <h1>Allow subclients to join</h1>
+    <div class="install">
+       <p>This demonstrates that a client can admit more clients (i.e. if the master is down)
+       <ol>
+         <li>Download the code from <a href="https://github.com/kf106/blockchain-games/archive/master.zip">https://github.com/kf106/multichain-semi-open/archive/master.zip</a></li>
+         <li>Extract the zip file into a folder, for example <code>~/multichain-semi-open/</code></li>
+         <li>Install the Python virtual environment, MultiChain binaries and other requirements with the command:<br><code>&nbsp;&nbsp;&nbsp;&nbsp;sudo ./install.sh</code></li>
+         <li>Then follow the instructions below</li>
+       </ol>
+    </div>
+
+    <h2>Running the client</h2>
+    <div class="signup">
+       <p>If you are joining from this node and running a new client for the first time, start it with the following command and parameters:
+       <br>
+       <br><code>&nbsp;&nbsp;&nbsp;&nbsp;./run-client.sh {{ nodeaddress }} <span id="url2">PLACEHOLDER</span>signup</code></p>
+
+       <p>If you have run the client node before, your blockchain node should be present, so just start it with the command:
+       <br>
+       <br><code>&nbsp;&nbsp;&nbsp;&nbsp;./run-client.sh</code></p>
+    </div>
+
+
+</body>
+</html>
+
+
+
+</body>
+</html>
+
+
