@@ -17,6 +17,9 @@ fi
 # uncomment for debug info
 # set -x
 
+# do the usual apt-get update
+apt-get update
+
 echo -e ""
 echo -e "--------------------------------------------------------------------------------"
 echo -e "Installing MultiChain                                            "
