@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blockchain Signup</title>
+    <script type="text/javascript">
+       function loadFunc(){
+         document.getElementById('url').innerText=window.location.href;
+       }
+    </script>
+</head>
+<body onload="loadFunc()">
+
+    <h1>Client Install</h1>
+    <div class="install">
+       <p>The system currently only runs on Linux, and has been tested on Ubuntu 18.10.
+       <ol>
+         <li>Download the code from <a href="https://github.com/kf106/blockchain-games/archive/master.zip">https://github.com/kf106/multichain-semi-open/archive/master.zip</a></li>
+         <li>Extract the zip file into a folder, for example <code>~/multichain-semi-open/</code></li>
+         <li>Then follow the instructions below</li>
+       </ol>
+    </div>
+
+    <h1>Client Signup</h1>
+    <div class="signup">
+       <p>If you are running the client node for the first time, start it with the following command and parameters: 
+       <br><code>./client/install.sh {{ nodeaddress }} <span id="url">PLACEHOLDER</span>signup</code></p>
+       <p>If you have run the client node before, your blockchain node should be present, so just start it with the command:
+       <br><code>./client/run.sh</code></p>
+    </div>
+
+</body>
+</html>
+
+
