@@ -3,7 +3,7 @@ One of the problems I have had with MultiChain is that when a new node wants to 
 
 Making the blockchain "anyone can join, send and receive" requires the workaround listed here:  
 
-    https://www.multichain.com/qa/3601/anyone-can-issue-dont-seem-to-work?show=3604#a3604 
+  https://www.multichain.com/qa/3601/anyone-can-issue-dont-seem-to-work?show=3604#a3604 
 
 which involves creating a public dummy address with no assets that anyone can use to send an unspent transaction to new addresses. I find that a bit of a hack.
 
