@@ -35,6 +35,7 @@ else
 	tar -xvzf "${MCFILE}.tar.gz"
 	cd "${MCFILE}"
 	mv multichaind multichain-cli multichain-util /usr/local/bin
+    cd ~/
 fi
 
 echo -e ""
