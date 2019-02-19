@@ -1,5 +1,9 @@
 # MultiChain Semi-Open Blockchain
-This repository provides a sample setup for a semi-open blockchain, using MultiChain (http://www.multichain.com) as the backend blockchain. Currently this is Linux only.
+One of the problems I have had with MultiChain is that when a new node wants to join, they have to try to join, and then send the connection request out of band (e.g. through email) to me. I then have to review it, and decide whether I want them to join.
+
+I therefore spent some time thinking about an automated method for admitting new participants with a limited set of permissions, namely a method for making MultiChain a semi-open (or semi-permissioned) blockchain.
+
+This repository provides a sample setup for such a semi-open blockchain, using MultiChain (http://www.multichain.com) as the backend blockchain. Currently this is Linux only. The master node runs a webserver that automates the sign-up of client nodes.
 
 A semi-open blockchain is where some permissions are granted to anyone who wants to join, but specific permissions are only granted to select participants. In this example, anyone can connect, send and receive assets. It could be made even more open by allowing any clients that join to subsequently pass these same permissions on to further participants.
 
