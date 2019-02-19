@@ -20,8 +20,12 @@ def getAddress(mc):
         sys.exit("My node has no address!")
     return address
 
+def checkActivate(mc):
+    result = json.loads(subprocess.check_output([mc + "listpermissions activate " + getAddress(mc)], shell=True))
+    return result
+    
 def checkIn(mc):
-    result = subprocess.check_output([mc + "publish root clientEntry '{\"json\":{\"address\":\"" + getAddress() + "\"}}'"], shell=True)
+    result = subprocess.check_output([mc + "publish root clientEntry '{\"json\":{\"address\":\"" + getAddress(mc) + "\"}}'"], shell=True)
     return result
 
 def getNameFromAddress(mc, address):
@@ -58,7 +62,11 @@ def getBalances(mc):
 ##
 
 def signupAddress(mc, address):
-    result = subprocess.check_output([mc + " grant " + address + " connect,send,receive,activate"], shell=True)
+    result = subprocess.check_output([mc + "grant " + address + " connect,send,receive,activate"], shell=True)
+    return result
+
+def clientsignupAddress(mc, address):
+    result = subprocess.check_output([mc + "grant " + address + " connect,send,receive,activate"], shell=True)
     return result
 
 def importAddress(mc, address):

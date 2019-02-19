@@ -44,14 +44,25 @@ def index():
             sleep(5)
 
     balances = getBalances(multichainCli)
-    return render_template(
-        'client/index.html',
-        currentname = getNameFromAddress(multichainCli, clientAddress),
-        address = clientAddress,
-        coins = balances["samplecoin"],
-        form = NameForm(),
-        nodeaddress = getNodeAddress(multichainCli)
-    )    
+
+    if not checkActivate(multichainCli):
+        return render_template(
+            'client/index-sub.html',
+            currentname = getNameFromAddress(multichainCli, clientAddress),
+            address = clientAddress,
+            coins = balances["samplecoin"],
+            form = NameForm(),
+            nodeaddress = getNodeAddress(multichainCli)
+        )
+    else:
+        return render_template(
+            'client/index.html',
+            currentname = getNameFromAddress(multichainCli, clientAddress),
+            address = clientAddress,
+            coins = balances["samplecoin"],
+            form = NameForm(),
+            nodeaddress = getNodeAddress(multichainCli)
+        )    
 
 # Route for automatic client-approved signup 
 # note: as a client can't issue more coins
@@ -64,11 +75,11 @@ def login():
         # get posted address (should do error checking on this)
         sent_address = request.get_json()['address']
         print("Got signup request with address: " + sent_address)
-        # grant connect send receive and activate
-        print(signupAddress(multichainCli, sent_address))
+        # grant connect send and receive
+        print(clientsignupAddress(multichainCli, sent_address))
         # if you want the client can watch its signups addresses
         # print(importAddress(multichainCli, sent_address))          
-        # issue more of the assets (samplecoin) to the new address
+        # send some of the assets (samplecoin) to the new address
         # you'll need to check that you have enough balance or client app will crash
         # print(issueAssetToAddress(multichainCli, sent_address, "samplecoin", "10"))  
         return render_template('master/signup_success.html')       
