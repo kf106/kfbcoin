@@ -1,5 +1,5 @@
 # MultiChain Semi-Open Blockchain
-One of the problems I have had with MultiChain is that when a new node wants to join, they have to try to join, and then send the connection request out of band (e.g. through email) to me. I then have to review it, and decide whether I want them to join.
+One of the problems I have had with MultiChain (http://www.multichain.com) is that when a new node wants to join, they have to try to join, and then send the connection request out of band (e.g. through email) to me. I then have to review it, and decide whether I want them to join.
 
 Making the blockchain "anyone can join, send and receive" requires the workaround listed here:  
 
@@ -9,9 +9,11 @@ which involves creating a public dummy address with no assets that anyone can us
 
 I therefore spent some time thinking about an automated method for admitting new participants with a limited set of permissions, namely a method for making MultiChain a semi-open (or semi-permissioned) blockchain.
 
-This repository provides a sample setup for such a semi-open blockchain, using MultiChain (http://www.multichain.com) as the backend blockchain. Currently this is Linux only. The master node runs a webserver that automates the sign-up of client nodes.
+This repository provides a sample setup for such a semi-open blockchain, using MultiChain as the backend blockchain. Currently this is Linux only. The master node runs a webserver that automates the sign-up of client nodes.
 
 A semi-open blockchain is where some permissions are granted to anyone who wants to join, but specific permissions are only granted to select participants. In this example, anyone can connect, send and receive assets, and activate other accounts to do the same. And there is no need to use a dummy address. However, it does require at least one node with webserve to be active.
+
+Another advantage is that you can have different levels of access for different client families, and allow access to the families through, for example, a website login.
 
 However, the master node is the only one able to create streams, issue more assets, and revoke access.
 
