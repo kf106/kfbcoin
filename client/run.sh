@@ -7,6 +7,9 @@ if [ -z $BASH_VERSION ] ; then
 	exit 1
 fi
 
+# uncomment for debug info
+# set -x
+
 source venv/bin/activate
 
 echo -e ""
@@ -61,6 +64,8 @@ else
       echo -e "My node address: $myaddress"
       # POST section to sign up
       curl --header "Content-Type: application/json" --request POST --data '{"address":"'"$myaddress"'"}' $2 
+      # Give server a chance to sign you up
+      sleep 8
       echo -e "Starting client node blockchain daemon."
       multichaind -datadir=~/.multichain-client -port=19255 -rpcport=19254 semi-open -daemon     
     fi

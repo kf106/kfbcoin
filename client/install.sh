@@ -14,6 +14,9 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
+# uncomment for debug info
+# set -x
+
 echo -e ""
 echo -e "--------------------------------------------------------------------------------"
 echo -e "Installing MultiChain                                            "

@@ -11,15 +11,15 @@
 </head>
 <body onload="loadFunc()">
 
-    <h1>Game Panel</h1>
+    <h1>Client Panel</h1>
     <div class="signup">
        <p>You are running the client from: <code><span id="url">PLACEHOLDER</span></code></p>
     </div>
 
-    <h2>Character Sheet</h2>
+    <h2>Details</h2>
     <div class="details">
        <ul>
-         <li><form action="" method=post>Name: {{ form.hidden_tag() }}{{ form.playername() }}{{ form.submit }}</form></li>
+         <li><form action="" method=post>Name: {{ form.hidden_tag() }}{{ form.clientname() }}{{ form.submit }}</form></li>
          <li>Address: {{ address }}</li>
          <li>Balance: {{ coins }} samplecoins</li>
 

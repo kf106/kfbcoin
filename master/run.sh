@@ -7,6 +7,9 @@ if [ -z $BASH_VERSION ] ; then
 	exit 1
 fi
 
+# uncomment for debug info
+# set -x
+
 source venv/bin/activate
 
 echo -e ""
@@ -53,7 +56,7 @@ fi
 # this runs the application
 echo -e "Starting master interface"
 export FLASK_APP=master-webserver.py
-google-chrome --app=http://localhost:5050 &>/dev/null &
+google-chrome http://localhost:5050 &>/dev/null &
 flask run --host=0.0.0.0 --port ${1:-5050}
 
 echo -e ""
