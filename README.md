@@ -14,33 +14,23 @@ The system contains two main components: the master node and the client nodes.
 ## Installation
 Clone or download this repository.
 
-Depending on whether you are planning to run a master node (i.e. start a new blockchain) or a client node (i.e. connect to an existing blockchain), either got to the master folder or the client folder:
-
-     cd master
-
-or
-
-     cd client
-
 Install the required packages and initialize the virtual environment with the install script:
 
      sudo ./install.sh
-     
-Then run the Python webserver.
-
-    ./run.sh
-    
-This starts a local webserver.
 
 ## Master Node
 The master creates the original blockchain, issues assets (samplecoin in this example), issues further samplecoin automatically as the bank's supplies run low, and automates client signup. 
 
+    ./run-master.sh
+    
+This sets up and runs a new MultiChain blockchain if it doesn't already exist, and starts a local webserver.
+
 The master webserver runs on port 5050 by default.
 
 ## Client Node
-The client sets up a client blockchain node, makes a signup request to the master node, launches the blockchain and creates a webserver interface that allows you to check your balance and associate a name with your account.
+The client sets up a client blockchain node, makes a signup request to the master node, launches the blockchain and creates a webserver interface that allows you to check your balance and associate a name with your account, and others to join via your client node.
 
-Subsequently it just launches the node and webserver, as the blockchain node only needs configuration once.
+Subsequently it just launches the node and webserver, as the blockchain node only needs configuration once. The instructions for signing up a client are on the master node website, listed in the previous section.
 
-If you accidentally close the client, the local webserver runs on port 5000.
+If you accidentally close the client web browser, the local webserver runs on port 5000.
 
