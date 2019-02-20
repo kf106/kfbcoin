@@ -9,13 +9,15 @@ which involves creating a public dummy address with no assets that anyone can us
 
 I therefore spent some time thinking about an automated method for admitting new participants with a limited set of permissions, namely a method for making MultiChain a semi-open (or semi-permissioned) blockchain.
 
-This repository provides a sample setup for such a semi-open blockchain, using MultiChain as the backend blockchain. Currently this is Linux only. The master node runs a webserver that automates the sign-up of client nodes.
+This repository provides a sample setup using MultiChain as the backend blockchain. Currently this is Linux only. The master node runs a webserver that automates the sign-up of client nodes.
 
-A semi-open blockchain is where some permissions are granted to anyone who wants to join, but specific permissions are only granted to select participants. In this example, anyone can connect, send and receive assets, and activate other accounts to do the same. And there is no need to use a dummy address. However, it does require at least one node with webserve to be active.
+A semi-open blockchain is where some permissions are granted to anyone who wants to join, but specific permissions are only granted to select participants. In this example:
 
-Another advantage is that you can have different levels of access for different client families, and allow access to the families through, for example, a website login.
+The master node is the only one able to create streams and issue more assets.
+Clients signing up with the master node can connect, send, receive and activate.
+Clients signing up with a client that signed up with the master node can connect, send and receive.
 
-However, the master node is the only one able to create streams, issue more assets, and revoke access.
+I'm sure there's some kind of vamipe metaphor that makes sense of the above.
 
 The system contains two main components: the master node and the client nodes.
 
