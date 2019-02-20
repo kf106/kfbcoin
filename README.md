@@ -17,7 +17,7 @@ The master node is the only one able to create streams and issue more assets.
 Clients signing up with the master node can connect, send, receive and activate.
 Clients signing up with a client that signed up with the master node can connect, send and receive.
 
-I'm sure there's some kind of vamipe metaphor that makes sense of the above.
+I'm sure there's some kind of vampire-based metaphor that makes sense of the above.
 
 The system contains two main components: the master node and the client nodes.
 
