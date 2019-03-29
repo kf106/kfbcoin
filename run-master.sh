@@ -49,7 +49,8 @@ else
   # create the initial sample coin
   masteraddress=$(multichain-cli semi-open listpermissions issue | python -c "import json,sys;obj=json.load(sys.stdin);print(obj[0]['address']);")
   sleep 5 # it can take a while for the blockchain to be ready
-  multichain-cli semi-open issue $masteraddress '{"name":"samplecoin","open":true}' 10000 1
+  multichain-cli semi-open issue $masteraddress '{"name":"kidneybean","open":true}' 10000 1
+  multichain-cli semi-open issue $masteraddress '{"name":"favabean","open":true}' 10000 1
 
 fi
 

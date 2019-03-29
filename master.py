@@ -44,8 +44,9 @@ def login():
         print(signupAddress(multichainCli, sent_address))
         # asset bank imports all addresses
         print(importAddress(multichainCli, sent_address))          
-        # issue more of the assets (gold and xp) to the new address
-        print(issueAssetToAddress(multichainCli, sent_address, "samplecoin", "1000"))  
+        # issue more of the assets (kidneybean and favabean) to the new address
+        print(issueAssetToAddress(multichainCli, sent_address, "kidneybean", "1"))  
+        print(issueAssetToAddress(multichainCli, sent_address, "favabean", "1"))
         return render_template('master/signup_success.html')       
     else:
         return render_template('master/signup_error.html') 

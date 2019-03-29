@@ -52,7 +52,7 @@ def getNodeAddress(mc):
 def getBalances(mc):
     balances_array = json.loads(subprocess.check_output([mc + "gettotalbalances"], shell=True))
     print(balances_array)
-    balances = {"samplecoin": "0"}
+    balances = {"kidneybean": "0", "favabean": "0"}
     for item in balances_array:
         balances.update( {item['name']: item['qty']} )
     return balances
