@@ -6,5 +6,5 @@ Visit https://www.kfbcoin.com for more information.
 
 Go to http://node.kfbcoin.com to sign up and receive free kfb coins!
 
-Terms and conditions apply. KFBcoins may be redeemed for real bean through mutual agreement. Coin seller agrees to pay all shipment and handling costs in fiat for receipt of real dried beans. Note that the handling costs may include the cost of purchasing said real dried beans.
+Terms and conditions apply: KFBcoins may be redeemed for real bean through mutual agreement. Coin seller agrees to pay all shipment and handling costs in fiat for receipt of real dried beans. Note that the handling costs may include the cost of purchasing said real dried beans. By downloading this software you agree to these terms.
 
