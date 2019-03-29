@@ -50,7 +50,8 @@ def index():
             'client/index-sub.html',
             currentname = getNameFromAddress(multichainCli, clientAddress),
             address = clientAddress,
-            coins = balances["samplecoin"],
+            coins = balances["favabean"],
+            coins2 = balances["kidneybean"],
             form = NameForm(),
             nodeaddress = getNodeAddress(multichainCli)
         )
@@ -59,7 +60,8 @@ def index():
             'client/index.html',
             currentname = getNameFromAddress(multichainCli, clientAddress),
             address = clientAddress,
-            coins = balances["samplecoin"],
+            coins = balances["favabean"],
+            coins2 = balances["kidneybean"],
             form = NameForm(),
             nodeaddress = getNodeAddress(multichainCli)
         )    
