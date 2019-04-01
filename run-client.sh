@@ -7,6 +7,10 @@ if [ -z $BASH_VERSION ] ; then
 	exit 1
 fi
 
+# Get latest version. An amazing auto-update feature
+echo -e "Checking if you have latest version..."
+git pull
+
 # uncomment for debug info
 # set -x
 
