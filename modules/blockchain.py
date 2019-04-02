@@ -11,7 +11,7 @@ import sys
 ### 
 
 def getAddress(mc):
-    obj = json.loads(subprocess.check_output([mc + "listaddresses"], shell=True))
+    obj = json.loads(subprocess.check_output([mc + "listaddresses"], shell=True).decode('utf-8'))
     address = ""
     for item in obj:
         if item['ismine'] == True:
@@ -21,16 +21,16 @@ def getAddress(mc):
     return address
 
 def checkActivate(mc):
-    result = json.loads(subprocess.check_output([mc + "listpermissions activate " + getAddress(mc)], shell=True))
+    result = json.loads(subprocess.check_output([mc + "listpermissions activate " + getAddress(mc)], shell=True).decode('utf-8'))
     return result
     
 def checkIn(mc):
-    result = subprocess.check_output([mc + "publish root clientEntry '{\"json\":{\"address\":\"" + getAddress(mc) + "\"}}'"], shell=True)
+    result = subprocess.check_output([mc + "publish root clientEntry '{\"json\":{\"address\":\"" + getAddress(mc) + "\"}}'"], shell=True).decode('utf-8') 
     return result
 
 def getNameFromAddress(mc, address):
     # use getstreampublishersummary to ensure only player's updates are examined
-    obj_s = subprocess.check_output([mc + "getstreampublishersummary root " + address + " jsonobjectmerge"], shell=True)
+    obj_s = subprocess.check_output([mc + "getstreampublishersummary root " + address + " jsonobjectmerge"], shell=True).decode('utf-8') 
     obj = json.loads(obj_s)
     print(obj)
     if 'name' in obj['json']:
@@ -41,16 +41,16 @@ def getNameFromAddress(mc, address):
 
 def writeName(mc, newName):
     wrt = mc + "publish root clientEntry '{\"json\":{\"name\":\"" + newName + "\", \"address\":\"" + getAddress(mc) + "\"}}'"
-    obj_s = subprocess.check_output([wrt], shell=True)
+    obj_s = subprocess.check_output([wrt], shell=True).decode('utf-8') 
     return
 
 def getNodeAddress(mc):
-    obj = json.loads(subprocess.check_output([mc + "getinfo"], shell=True))
+    obj = json.loads(subprocess.check_output([mc + "getinfo"], shell=True).decode('utf-8') )
     nodeaddress = obj['nodeaddress']
     return nodeaddress
 
 def getBalances(mc):
-    balances_array = json.loads(subprocess.check_output([mc + "gettotalbalances"], shell=True))
+    balances_array = json.loads(subprocess.check_output([mc + "gettotalbalances"], shell=True).decode('utf-8') )
     print(balances_array)
     balances = {"kidneybean": "0", "favabean": "0"}
     for item in balances_array:
@@ -62,23 +62,23 @@ def getBalances(mc):
 ##
 
 def signupAddress(mc, address):
-    result = subprocess.check_output([mc + "grant " + address + " connect,send,receive,activate"], shell=True)
+    result = subprocess.check_output([mc + "grant " + address + " connect,send,receive,activate"], shell=True).decode('utf-8') 
     return result
 
 def clientsignupAddress(mc, address):
-    result = subprocess.check_output([mc + "grant " + address + " connect,send,receive,activate"], shell=True)
+    result = subprocess.check_output([mc + "grant " + address + " connect,send,receive,activate"], shell=True).decode('utf-8') 
     return result
 
 def importAddress(mc, address):
-    result = subprocess.check_output([mc + "importaddress " + address + " true"], shell=True)
+    result = subprocess.check_output([mc + "importaddress " + address + " true"], shell=True).decode('utf-8') 
     return result      
 
 def issueAssetToAddress(mc, address, asset, qty):
-    result = subprocess.check_output([mc + "issuemore " + address + " " + asset + " " + qty], shell=True)
+    result = subprocess.check_output([mc + "issuemore " + address + " " + asset + " " + qty], shell=True).decode('utf-8') 
     return result
 
 def listAddresses(mc):
-    result = json.loads(subprocess.check_output([mc + "listaddresses"], shell=True))
+    result = json.loads(subprocess.check_output([mc + "listaddresses"], shell=True).decode('utf-8'))
     return result
 
 
